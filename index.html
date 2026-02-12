@@ -1713,7 +1713,6 @@
           </div>
 
           <form
-            id="contactForm"
             name="contact"
             method="POST"
             data-netlify="true"
@@ -1776,9 +1775,6 @@
             
             <!-- Google reCAPTCHA -->
             <div class="g-recaptcha" data-sitekey="6LeNZWksAAAAADiEbEpyl-sqk8JdFUg7tHPS--lM"></div>
-            
-            <!-- Success/Error Messages -->
-            <div id="formMessage" class="hidden"></div>
             
             <button
               type="submit"
@@ -2005,62 +2001,6 @@
         let scrolled = (winScroll / height) * 100;
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
-    </script>
-    
-    <!-- Contact Form AJAX Handler -->
-    <script>
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const form = e.target;
-        const formData = new FormData(form);
-        const messageDiv = document.getElementById('formMessage');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        
-        // Get reCAPTCHA response
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-          messageDiv.className = 'bg-neo-red text-white px-4 py-3 border-2 border-black font-mono font-bold';
-          messageDiv.textContent = '⚠️ Please complete the reCAPTCHA';
-          messageDiv.classList.remove('hidden');
-          return;
-        }
-        
-        // Disable button and show loading
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'SENDING...';
-        
-        fetch('/', {
-          method: 'POST',
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString()
-        })
-        .then(response => {
-          if (response.ok) {
-            messageDiv.className = 'bg-neo-green text-black px-4 py-3 border-2 border-black font-mono font-bold';
-            messageDiv.textContent = '✓ MESSAGE SENT SUCCESSFULLY!';
-            messageDiv.classList.remove('hidden');
-            form.reset();
-            grecaptcha.reset();
-          } else {
-            throw new Error('Form submission failed');
-          }
-        })
-        .catch(error => {
-          messageDiv.className = 'bg-neo-red text-white px-4 py-3 border-2 border-black font-mono font-bold';
-          messageDiv.textContent = '✗ ERROR: Please try again';
-          messageDiv.classList.remove('hidden');
-        })
-        .finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'SEND MESSAGE';
-          
-          // Hide message after 5 seconds
-          setTimeout(() => {
-            messageDiv.classList.add('hidden');
-          }, 5000);
-        });
-      });
     </script>
     
     <!-- Google reCAPTCHA Script -->
