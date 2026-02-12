@@ -1716,16 +1716,11 @@
             name="contact"
             method="POST"
             data-netlify="true"
-            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
             class="space-y-6 bg-gray-50 p-6 border-2 border-black"
           >
             <!-- Hidden field for spam protection -->
             <input type="hidden" name="form-name" value="contact" />
-            <div class="hidden">
-              <label
-                >Don't fill this out if you're human: <input name="bot-field"
-              /></label>
-            </div>
 
             <div class="flex flex-col">
               <label
@@ -1773,8 +1768,8 @@
               ></textarea>
             </div>
             
-            <!-- Google reCAPTCHA -->
-            <div class="g-recaptcha" data-sitekey="6LeNZWksAAAAADiEbEpyl-sqk8JdFUg7tHPS--lM"></div>
+            <!-- Netlify reCAPTCHA -->
+            <div data-netlify-recaptcha="true"></div>
             
             <button
               type="submit"
@@ -2002,8 +1997,5 @@
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
     </script>
-    
-    <!-- Google reCAPTCHA Script -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>
