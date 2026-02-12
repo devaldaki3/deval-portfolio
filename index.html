@@ -29,6 +29,9 @@
       property="og:image"
       content="https://deval-portfolio.netlify.app/Assets/images/og_image.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -260,6 +263,29 @@
 
         100% {
           transform: translate(0);
+        }
+      }
+
+      /* reCAPTCHA Responsive Fix */
+      [data-netlify-recaptcha="true"] {
+        transform: scale(0.85);
+        transform-origin: 0 0;
+        margin-bottom: -10px;
+      }
+
+      @media (max-width: 640px) {
+        [data-netlify-recaptcha="true"] {
+          transform: scale(0.77);
+          transform-origin: 0 0;
+          margin-bottom: -15px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        [data-netlify-recaptcha="true"] {
+          transform: scale(0.65);
+          transform-origin: 0 0;
+          margin-bottom: -20px;
         }
       }
     </style>
@@ -1198,7 +1224,7 @@
                 </div>
               </div>
               <a
-                href="https://github.com/devaldaki3/unified-ml-pipelines"
+                href="https://github.com/devaldaki3/Unified-ML-Pipelines"
                 target="_blank"
                 class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm"
               >
@@ -1249,7 +1275,7 @@
                 </div>
               </div>
               <a
-                href="https://github.com/devaldaki3/seekra"
+                href="https://github.com/devaldaki3/Seekra"
                 target="_blank"
                 class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm"
               >
@@ -1297,7 +1323,7 @@
                 </div>
               </div>
               <a
-                href="https://github.com/devaldaki3/movie-recommendation-system"
+                href="https://github.com/devaldaki3/Movieflix"
                 target="_blank"
                 class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm"
               >
