@@ -265,29 +265,6 @@
           transform: translate(0);
         }
       }
-
-      /* reCAPTCHA Responsive Fix */
-      [data-netlify-recaptcha="true"] {
-        transform: scale(0.85);
-        transform-origin: 0 0;
-        margin-bottom: -10px;
-      }
-
-      @media (max-width: 640px) {
-        [data-netlify-recaptcha="true"] {
-          transform: scale(0.77);
-          transform-origin: 0 0;
-          margin-bottom: -15px;
-        }
-      }
-
-      @media (max-width: 380px) {
-        [data-netlify-recaptcha="true"] {
-          transform: scale(0.65);
-          transform-origin: 0 0;
-          margin-bottom: -20px;
-        }
-      }
     </style>
   </head>
 
@@ -1695,117 +1672,67 @@
     </section>
 
     <section id="contact" class="py-24 px-4 max-w-5xl mx-auto">
-      <div
-        class="bg-white border-4 border-black shadow-hard-xl p-8 md:p-12 relative reveal mt-12"
-      >
-        <div
-          class="absolute -top-10 -left-6 bg-neo-yellow border-4 border-black px-6 py-2 shadow-hard rotate-[-5deg]"
-        >
-          <span class="font-black text-2xl">START A PROJECT</span>
-        </div>
+        <div class="bg-white border-4 border-black shadow-hard-xl p-8 md:p-12 relative reveal mt-12">
+            <div
+                class="absolute -top-10 -left-6 bg-neo-yellow border-4 border-black px-6 py-2 shadow-hard rotate-[-5deg]">
+                <span class="font-black text-2xl">START A PROJECT</span>
+            </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h2 class="text-6xl font-black uppercase mb-6 leading-[0.85]">
-              Let's<br />Talk.
-            </h2>
-            <p class="font-mono text-lg mb-8 text-gray-600">
-              Actively seeking full time opportunities in Machine Learning and
-              AI Engineering.
-            </p>
-            <div class="space-y-4">
-              <div class="flex items-center gap-4">
-                <div
-                  class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black"
-                >
-                  <i class="ri-mail-line text-xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-6xl font-black uppercase mb-6 leading-[0.85]">Let's<br>Talk<br>AI.</h2>
+                    <p class="font-mono text-lg mb-8 text-gray-600">
+                        Actively seeking full time opportunities in Machine Learning and AI Engineering.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
+                                <i class="ri-mail-line text-xl"></i>
+                            </div>
+                            <a href="mailto:devaldaki@gmail.com"
+                                class="text-xl font-bold hover:bg-neo-blue cursor-hover">devaldaki@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
+                                <i class="ri-map-pin-line text-xl"></i>
+                            </div>
+                            <span class="text-xl font-bold">India / Remote Available</span>
+                        </div>
+                    </div>
                 </div>
-                <a
-                  href="mailto:devaldaki@gmail.com"
-                  class="text-xl font-bold hover:bg-neo-blue cursor-hover"
-                  >devaldaki@gmail.com</a
-                >
-              </div>
 
-              <div class="flex items-center gap-4">
-                <div
-                  class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black"
-                >
-                  <i class="ri-map-pin-line text-xl"></i>
-                </div>
-                <span class="text-xl font-bold">India / Remote Available</span>
-              </div>
+                <form 
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    class="space-y-4 bg-gray-50 p-6 border-2 border-black">
+                    <!-- Hidden field for Netlify -->
+                    <input type="hidden" name="form-name" value="contact" />
+                    
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Name</label>
+                        <input type="text" name="name" placeholder="NAME / COMPANY" required
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Email</label>
+                        <input type="email" name="email" placeholder="EMAIL ADDRESS" required
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Message</label>
+                        <textarea rows="4" name="message" placeholder="PROJECT DETAILS..." required
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
+                        SEND MESSAGE
+                    </button>
+                </form>
             </div>
-          </div>
-
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-recaptcha="true"
-            class="space-y-6 bg-gray-50 p-6 border-2 border-black"
-          >
-            <!-- Hidden field for spam protection -->
-            <input type="hidden" name="form-name" value="contact" />
-
-            <div class="flex flex-col">
-              <label
-                class="font-mono font-bold mb-1 uppercase text-xs"
-                for="name"
-                >Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="NAME / COMPANY"
-                required
-                class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover"
-              />
-            </div>
-            <div class="flex flex-col">
-              <label
-                class="font-mono font-bold mb-1 uppercase text-xs"
-                for="email"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="EMAIL ADDRESS"
-                required
-                class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover"
-              />
-            </div>
-            <div class="flex flex-col">
-              <label
-                class="font-mono font-bold mb-1 uppercase text-xs"
-                for="message"
-                >Message</label
-              >
-              <textarea
-                rows="4"
-                id="message"
-                name="message"
-                placeholder="PROJECT DETAILS..."
-                required
-                class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"
-              ></textarea>
-            </div>
-            
-            <!-- Netlify reCAPTCHA -->
-            <div data-netlify-recaptcha="true"></div>
-            
-            <button
-              type="submit"
-              class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
-            >
-              SEND MESSAGE
-            </button>
-          </form>
         </div>
-      </div>
     </section>
 
     <footer
