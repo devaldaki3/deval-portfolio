@@ -1772,6 +1772,10 @@
                 class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"
               ></textarea>
             </div>
+            
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="6LeNZWksAAAAADiEbEpyl-sqk8JdFUg7tHPS--lM"></div>
+            
             <button
               type="submit"
               class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover"
@@ -1998,5 +2002,8 @@
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
     </script>
+    
+    <!-- Google reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>
